@@ -22,7 +22,7 @@ module.exports = model(
       type: Date,
       default: Date.now,
     },
-    items: [
+    postings: [
       {
         type: Schema.Types.ObjectID,
         ref: "posting",
