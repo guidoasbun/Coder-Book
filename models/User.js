@@ -18,10 +18,14 @@ module.exports = model(
       required: true,
       unique: true,
     },
+    dateAccountCreated: {
+      type: Date,
+      default: Date.now,
+    },
     items: [
       {
         type: Schema.Types.ObjectID,
-        ref: "item",
+        ref: "posting",
       },
     ],
   })
