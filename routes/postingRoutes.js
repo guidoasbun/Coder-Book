@@ -1,13 +1,6 @@
 const router = require("express").Router();
 const { Posting } = require("../models");
 
-//GET all postings
-router.get("/postings", (req, res) => {
-  Posting.find()
-    .then((items) => res.json(items))
-    .catch((e) => console.error(e));
-});
-
 //POST one item
 router.post("/postings", (req, res) => {
   Posting.create(req.body)

@@ -7,5 +7,13 @@ module.exports = model(
             type: String,
             required: true,
         },
+        owner: {
+            type: Schema.Types.ObjectID,
+            ref: 'user'
+        },
+        response: {
+            type: Schema.Types.ObjectID,
+            ref: 'user'
+        }
     })
 );
