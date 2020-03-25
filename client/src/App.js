@@ -4,7 +4,8 @@ import axios from "axios";
 const App = () => {
   useEffect(() => {
     axios
-      .get("/api/users")
+        //once a user is created in the DB, use a user ID to pull data
+      .get("/api/users/5e7ae13044ec94570cbd10da")
       .then(({ data: users }) => {
         console.log(users);
       })
