@@ -1,7 +1,7 @@
 const { model, Schema } = require("mongoose");
 
 module.exports = model(
-  "user",
+  "User",
   new Schema({
     name: {
       type: String,
@@ -18,10 +18,20 @@ module.exports = model(
       required: true,
       unique: true,
     },
-    items: [
+    dateAccountCreated: {
+      type: Date,
+      default: Date.now,
+    },
+    postings: [
       {
         type: Schema.Types.ObjectID,
-        ref: "item",
+        ref: "posting",
+      },
+    ],
+    comments: [
+      {
+        type: Schema.Types.ObjectID,
+        ref: "posting",
       },
     ],
   })
