@@ -1,18 +1,26 @@
 const router = require("express").Router();
-const { Posting } = require("../models");
+const { Posting, User } = require("../models");
 
 //POST one item
-router.post("/postings", (req, res) => {
+router.post("/postings", (req, res) =>
   Posting.create(req.body)
-    .then(() => res.sendStatus(200))
-    .catch((e) => console.error(e));
-});
+    .then(({ _id }) => {
+      User.findByIdAndUpdate(req.body.owner, {
+        $push: { postings: _id },
+      }).then(() => res.sendStatus(200));
+    })
+    .catch((e) => console.error(e))
+);
 
 //PUT one item
 router.put("/postings/:id", (req, res) => {
-  Posting.findByIdAndUpdate(req.params.id, req.body).then(() =>
-    res.sendStatus(200).catch((e) => console.error(e))
-  );
+  Posting.findByIdAndUpdate(req.params.id, req.body).then(({ _id }) => {
+    console.log("Hello there");
+    User.findByIdAndUpdate(req.body.owner, {
+      $push: { comments: _id },
+    });
+    res.sendStatus(200).catch((e) => console.error(e));
+  });
 });
 
 //DELETE one item

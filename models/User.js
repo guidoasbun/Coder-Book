@@ -1,7 +1,7 @@
 const { model, Schema } = require("mongoose");
 
 module.exports = model(
-  "user",
+  "User",
   new Schema({
     name: {
       type: String,
@@ -23,6 +23,12 @@ module.exports = model(
       default: Date.now,
     },
     postings: [
+      {
+        type: Schema.Types.ObjectID,
+        ref: "posting",
+      },
+    ],
+    comments: [
       {
         type: Schema.Types.ObjectID,
         ref: "posting",

@@ -11,13 +11,15 @@ module.exports = model(
       type: Schema.Types.ObjectID,
       ref: "user",
     },
-    comment: {
-      type: String,
-      commentOwner: {
-        type: Schema.Types.ObjectID,
-        ref: "user",
+    comments: [
+      {
+        comment: String,
+        commentOwner: {
+          type: Schema.Types.ObjectID,
+          ref: "user",
+        },
       },
-    },
+    ],
     dateEntryCreated: {
       type: Date,
       default: Date.now,
