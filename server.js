@@ -8,6 +8,8 @@ const app = express();
 app.use(express.static(join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+//Middleware for React, serves to build folder for deployment
+app.use(express.static(join(__dirname, "client", "build")));
 
 //Models
 require("./models");
@@ -17,5 +19,5 @@ app.use(require("./routes"));
 
 //Router
 require("./config")
-  .then(() => app.listen(3000))
+  .then(() => app.listen(3001))
   .catch((e) => console.error(e));
