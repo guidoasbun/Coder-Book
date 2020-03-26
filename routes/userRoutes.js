@@ -1,19 +1,36 @@
 const router = require("express").Router();
 const { User } = require("../models");
+const jwt = require('jsonwebtoken')
 
-//Get one user
-router.get("/users/:id", (req, res) => {
-  User.findById(req.params.id)
-      .populate('postings')
-      .then((user) => res.json(user))
-      .catch((e) => console.error(e));
+//Route to register a new user with password
+router.post("/users/register", (req, res) => {
+  User.register(
+    new User({
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      username: req.body.username,
+      email: req.body.email,
+    }),
+    req.body.password,
+    (err) => {
+      if (err) throw err;
+      res.sendStatus(200);
+    }
+  );
 });
 
-//Create one User
-router.post("/users", (req, res) => {
-  User.create(req.body)
-      .then(() => res.sendStatus(200))
-      .catch((e) => console.error(e));
+//Route to log in a user with password that returns:
+//isLoggedIn, postings, user, token
+router.post("/users/login", (req, res) => {
+  User.authenticate()(req.body.username, req.body.password, (err, user) => {
+    if (err) throw err;
+    res.json({
+      isLoggedIn: !!user,
+      postings: user.postings,
+      user: user.username,
+      token: jwt.sign({ id: user._id }, "coderbooksecretkey"),
+    });
+  });
 });
 
 module.exports = router;

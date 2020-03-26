@@ -1,6 +1,11 @@
 require("dotenv").config();
 const express = require("express");
 const { join } = require("path");
+//Authentication packages
+const passport = require("passport");
+const LocalStrategy = require("passport-local").Strategy;
+const { Strategy: JWTStrategy, ExtractJwt } = require("passport-jwt");
+const { User } = require("./models");
 
 const app = express();
 
@@ -8,6 +13,30 @@ const app = express();
 app.use(express.static(join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+//Middleware for authentication
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+//Plugins for authentication
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+passport.use(
+  new JWTStrategy(
+    {
+      jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+      secretOrKey: "coderbooksecretkey", //will put in .ENV before deployment
+    },
+    (jwtPayload, cb) =>
+      User.findById(jwtPayload.id)
+        .then((user) => cb(null, user))
+        .catch((err) => cb(err))
+  )
+);
+
 //Middleware for React, serves to build folder for deployment
 app.use(express.static(join(__dirname, "client", "build")));
 

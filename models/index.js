@@ -1,4 +1,8 @@
+const Item = require("./Posting");
+const User = require("./User");
+
+//exports models
 module.exports = {
-  Posting: require("./Posting"),
-  User: require("./User"),
+  Item,
+  User,
 };

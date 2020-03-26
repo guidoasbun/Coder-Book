@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import axios from "axios";
+import Navbar from "./components/navbar";
+import Sandbox from "./components/sandbox";
 
 const App = () => {
   useEffect(() => {
@@ -12,8 +14,20 @@ const App = () => {
       .catch((e) => console.error(e));
   }, []);
 
+  useEffect(() => {
+    axios.get("https://api.chucknorris.io/jokes/random")
+      .then(({ data: facts }) => {
+        console.log(facts.value)
+      })
+      .catch((e) => console.log(e))
+  })
+
   return (
     <div>
+
+      <Navbar />
+      <Sandbox />
+
       <h1>Hello Project 3!!!</h1>
     </div>
   );

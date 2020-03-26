@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import Sandbox from './components/sandbox'
 import * as serviceWorker from './serviceWorker';
+
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    <Sandbox />
+
   </React.StrictMode>,
   document.getElementById('root')
 );
