@@ -28,11 +28,11 @@ module.exports = model(
         ref: "posting",
       },
     ],
-    comments: [
-      {
-        type: Schema.Types.ObjectID,
-        ref: "posting",
-      },
-    ],
+    // comments: [
+    //   {
+    //     type: Schema.Types.ObjectID,
+    //     ref: "posting",
+    //   },
+    // ],
   })
 );
