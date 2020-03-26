@@ -19,13 +19,14 @@ router.post("/users/register", (req, res) => {
   );
 });
 
-//Route to log in a user with password
+//Route to log in a user with password that returns:
+//isLoggedIn, postings, user, token
 router.post("/users/login", (req, res) => {
   User.authenticate()(req.body.username, req.body.password, (err, user) => {
     if (err) throw err;
     res.json({
       isLoggedIn: !!user,
-      items: user.items,
+      postings: user.postings,
       user: user.username,
       token: jwt.sign({ id: user._id }, "coderbooksecretkey"),
     });
