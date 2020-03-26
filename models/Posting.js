@@ -3,7 +3,12 @@ const { model, Schema } = require("mongoose");
 module.exports = model(
   "posting",
   new Schema({
-    entry: {
+    entryTitle: {
+      type: String,
+      required: true
+    },
+
+      entry: {
       type: String,
       required: true,
     },
