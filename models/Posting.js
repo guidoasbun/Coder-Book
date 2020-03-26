@@ -3,7 +3,12 @@ const { model, Schema } = require("mongoose");
 module.exports = model(
   "posting",
   new Schema({
-    entry: {
+    entryTitle: {
+      type: String,
+      required: true
+    },
+
+      entry: {
       type: String,
       required: true,
     },
@@ -11,15 +16,6 @@ module.exports = model(
       type: Schema.Types.ObjectID,
       ref: "user",
     },
-    comments: [
-      {
-        comment: String,
-        commentOwner: {
-          type: Schema.Types.ObjectID,
-          ref: "user",
-        },
-      },
-    ],
     dateEntryCreated: {
       type: Date,
       default: Date.now,
