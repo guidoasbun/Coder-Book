@@ -1,16 +1,17 @@
-import React, { createNews } from './node_modules/react'
+import React from 'react'
+import axios from 'axios'
+import { get } from 'mongoose'
 
-const NewsContext = createNews({
-  newsTitle: '',
-  article: ''
-})
-
-fetch(
-  "http://newsapi.org/v2/top-headlines?category=technology&sortBy=publishedAt&language=en&apiKey=7561e5f155d14e048633335b62c31dde"
+const NewsArea = () => {
+  axios.get("http://newsapi.org/v2/top-headlines?category=technology&sortBy=publishedAt&language=en&apiKey=7561e5f155d14e048633335b62c31dde"
 )
   .then(r => r.json())
   .then(({ articles }) => {
     console.log(articles);
+
+  return (
+    
+  )
     document.getElementById("newsTitle0").innerHTML = `
         <h4>${articles[0].title}</h4>
       `;
