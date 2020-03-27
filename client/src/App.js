@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Containerexample from "./components/containerexample";
 import Sandbox from "./components/sandbox";
 import Ticker from 'react-ticker'
 
@@ -36,7 +37,7 @@ const App = () => {
       {/* <Sandbox /> */}
 
       <h1>Hello Project 3!!!</h1>
-
+        <Containerexample/>
 
     </div>
   );
