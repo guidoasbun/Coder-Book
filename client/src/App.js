@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import axios from "axios";
-import Navbar from "./components/navbar";
 
 const App = () => {
   useEffect(() => {
@@ -15,7 +14,6 @@ const App = () => {
 
   return (
     <div>
-        <Navbar/>
       <h1>Hello Project 3!!!</h1>
 
 
