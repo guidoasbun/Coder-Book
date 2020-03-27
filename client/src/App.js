@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Navbar from "./components/navbar";
 import Sandbox from "./components/sandbox";
-import Ticker from 'react-ticker'
+import Chuckticker from "./components/chuckticker"
+
 
 const App = () => {
   const [data, setData] = useState([])
@@ -16,30 +17,15 @@ const App = () => {
       .catch((e) => console.error(e));
   }, []);
 
-  useEffect(() => {
-    axios.get("https://api.chucknorris.io/jokes/random")
-      .then(result => setData(result.data))
-    console.log(data)
 
-  }, [])
 
 
   return (
     <div>
 
       <Navbar />
-      < Ticker >
-        {({ index }) => (
-          <>
-            <h1 style={{ whiteSpace: 'nowrap' }}><img src={data.icon_url} alt="" />{data.value}{index}</h1>
-
-          </>
-        )}
-      </Ticker >
-      {/* <Sandbox /> */}
-
-      <h1>Hello Project 3!!!</h1>
-
+      <Chuckticker />
+      <Sandbox />
 
     </div>
   );

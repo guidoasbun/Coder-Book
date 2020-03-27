@@ -1,23 +1,21 @@
-import React, { useEffect, useState } from 'react'
-import Ticker from 'react-ticker'
-import axios from 'axios'
+import React from 'react';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
+
+export default function SimpleContainer() {
+  return (
+    <React.Fragment>
+      <CssBaseline />
+      <Container maxWidth="sm">
+        <Typography component="div" style={{ backgroundColor: '#cfe8fc', height: '100vh' }} />
+      </Container>
+    </React.Fragment>
+  );
+}
 
 
 
-
-const MoveStuffAround = () => (
-
-  < Ticker >
-    {({ index }) => (
-      <>
-        <h1>This is the Headline of element #{index}!</h1>
-        <img src="www.my-image-source.com/" alt="" />
-      </>
-    )}
-  </Ticker >
-)
-
-export default MoveStuffAround
 
 
 
