@@ -5,10 +5,9 @@ module.exports = model(
   new Schema({
     entryTitle: {
       type: String,
-      required: true
+      required: true,
     },
-
-      entry: {
+    entry: {
       type: String,
       required: true,
     },

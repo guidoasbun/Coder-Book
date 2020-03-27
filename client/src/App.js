@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Navbar from "./components/navbar";
 import Sandbox from "./components/sandbox";
 import Chuckticker from "./components/chuckticker"
 
@@ -22,10 +21,25 @@ const App = () => {
 
   return (
     <div>
+<<<<<<< HEAD
 
       <Navbar />
       <Chuckticker />
       <Sandbox />
+=======
+      < Ticker >
+        {({ index }) => (
+          <>
+            <h1 style={{ whiteSpace: 'nowrap' }}><img src={data.icon_url} alt="" />{data.value}{index}</h1>
+
+          </>
+        )}
+      </Ticker >
+      {/* <Sandbox /> */}
+
+      <h1>Hello Project 3!!!</h1>
+
+>>>>>>> b065efaa24999a610e717e3fef29003270f63740
 
     </div>
   );
