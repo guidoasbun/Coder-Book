@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
+import NewsArea from './components/NewsArea'
 import axios from "axios";
-import Navbar from "./components/navbar/navbar";
+
 
 const App = () => {
+  
   useEffect(() => {
     axios
         //once a user is created in the DB, use a user ID to pull data
@@ -15,7 +17,6 @@ const App = () => {
 
   return (
     <div>
-      <Navbar />
       <h1>Hello Project 3!!!</h1>
 
 
