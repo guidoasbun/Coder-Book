@@ -14,7 +14,8 @@
     "react-css-marquee": "0.0.9",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
-    "react-ticker": "^1.2.2"
+    "react-ticker": "^1.2.2",
+    "typeface-roboto": "0.0.75"
   },
   "scripts": {
     "start": "react-scripts start",

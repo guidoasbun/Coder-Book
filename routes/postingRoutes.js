@@ -10,7 +10,7 @@ const { check, validationResult } = require("express-validator");
 //@desc      Get all users postings
 //@access    Private
 
-router.get("/postings", auth, async (req, res) => {
+router.get("/postings", async (req, res) => {
   try {
     const postings = await Posting.find({ user: req.user.id }).sort({
       date: -1,
@@ -57,7 +57,7 @@ router.post(
 //@desc      Update posting
 //@access    Private
 
-router.put("/postings/:id", auth, async (req, res) => {
+router.put("/postings/:id", async (req, res) => {
   const { entryTitle, entry } = req.body;
 
   // Building posting object
@@ -92,7 +92,7 @@ router.put("/postings/:id", auth, async (req, res) => {
 //@desc      Delete contact
 //@access    Private
 
-router.delete("/postings/:id", auth, async (req, res) => {
+router.delete("/postings/:id", async (req, res) => {
   try {
     let posting = await Posting.findById(req.params.id);
 

@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react'
 import Ticker from 'react-ticker'
 import axios from 'axios'
 import Marquee from 'react-css-marquee'
-
+import 'typeface-roboto'
+import { Typography } from '@material-ui/core'
 
 
 const Chuckticker = () => {
@@ -21,7 +22,10 @@ const Chuckticker = () => {
 
 
       <div style={{ color: "white", width: "90%", margin: "auto" }}>
-        <Marquee text={data.value} size={1.5} speed={2} />
+        <Typography>
+          <Marquee text={data.value} size={1.5} speed={2} />
+        </Typography>
+
       </div>
     </>
   )
