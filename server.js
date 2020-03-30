@@ -13,6 +13,7 @@ const app = express();
 app.use(express.static(join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.json({ extended: false }));
 
 //Middleware for authentication
 
@@ -39,6 +40,8 @@ passport.use(
 
 //Middleware for React, serves to build folder for deployment
 app.use(express.static(join(__dirname, "client", "build")));
+
+
 
 //Models
 require("./models");
