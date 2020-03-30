@@ -18,9 +18,7 @@ const Chuckticker = () => {
 
   return (
     <>
-      <div style={{ width: "100%", margin: "auto", height: "auto", textAlign: "center" }}>
-        {/* <img style={{ marginBottom: '5px' }} src="/assets/images/CoderBook_logo.png" /> */}
-      </div>
+
 
       <div style={{ color: "white", width: "90%", margin: "auto" }}>
         <Marquee text={data.value} size={1.5} speed={2} />
@@ -30,5 +28,3 @@ const Chuckticker = () => {
 }
 
 export default Chuckticker
-
-

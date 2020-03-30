@@ -11,7 +11,6 @@ import Button from '@material-ui/core/Button';
 import LoginModal from "../login";
 
 
-
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
@@ -115,3 +114,4 @@ export default function SearchAppBar() {
     </div>
   );
 }
+
