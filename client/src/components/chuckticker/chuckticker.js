@@ -18,18 +18,12 @@ const Chuckticker = () => {
 
   return (
     <>
-      <div style={{ width: "552px", margin: "auto", height: "auto", textAlign: "center", backgroundColor: "#606571" }}>
-        <img src="/assets/images/CoderBook_logo.png" />
+      <div style={{ width: "100%", margin: "auto", height: "auto", textAlign: "center" }}>
+        {/* <img style={{ marginBottom: '5px' }} src="/assets/images/CoderBook_logo.png" /> */}
       </div>
 
-      <div style={{ color: "white", border: "1px solid #606571", height: "50px", width: "552px", margin: "auto", backgroundColor: "#606571" }}>
-
-        <div style={{ color: "white", border: "1px solid #606571", height: "50px", width: "505px", margin: "auto", backgroundColor: "#606571" }}>
-
-          <Marquee text={data.value} size={1} speed={2} />
-
-        </div >
-
+      <div style={{ color: "white", width: "90%", margin: "auto" }}>
+        <Marquee text={data.value} size={1.5} speed={2} />
       </div>
     </>
   )

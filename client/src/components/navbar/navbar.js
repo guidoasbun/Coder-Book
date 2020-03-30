@@ -8,6 +8,9 @@ import { fade, makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import Button from '@material-ui/core/Button';
+import LoginModal from "../login";
+
+
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -49,6 +52,9 @@ const useStyles = makeStyles(theme => ({
   inputRoot: {
     color: 'inherit',
   },
+  logoStyle: {
+    height: '20px',
+  },
   inputInput: {
     padding: theme.spacing(1, 1, 1, 0),
     // vertical padding + font size from searchIcon
@@ -67,6 +73,12 @@ const useStyles = makeStyles(theme => ({
 export default function SearchAppBar() {
   const classes = useStyles();
 
+
+  const handleLogin = () => {
+    console.log('ping')
+  }
+
+
   return (
     <div className={classes.root}>
       <AppBar position="static">
@@ -81,9 +93,9 @@ export default function SearchAppBar() {
           </IconButton>
 
           <Typography className={classes.title} variant="h6" noWrap>
-            Material-UI
+            <img style={{ width: "200px" }} src="/assets/images/coder_book.png" />
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Button onClick={handleLogin} color="inherit"><LoginModal /></Button>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
@@ -99,6 +111,7 @@ export default function SearchAppBar() {
           </div>
         </Toolbar>
       </AppBar>
+
     </div>
   );
 }

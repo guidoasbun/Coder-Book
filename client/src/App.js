@@ -21,8 +21,10 @@ const App = () => {
     <div>
 
       <Navbar />
-      <Chuckticker />
+
       <Sandbox />
+
+
 
 
     </div>

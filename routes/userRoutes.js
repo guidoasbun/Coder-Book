@@ -10,6 +10,7 @@ router.post("/users/register", (req, res) => {
       lastName: req.body.lastName,
       username: req.body.username,
       email: req.body.email,
+
     }),
     req.body.password,
     (err) => {
