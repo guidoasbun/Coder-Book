@@ -10,9 +10,9 @@ const { check, validationResult } = require("express-validator");
 //@desc      Get all users postings
 //@access    Private
 
-router.get("/postings", auth, async (req, res) => {
+router.get("/postings", async (req, res) => {
   try {
-    const postings = await Posting.find({ user: req.user.id }).sort({
+    const postings = await Posting.find().sort({
       date: -1,
     });
     res.json(postings);
