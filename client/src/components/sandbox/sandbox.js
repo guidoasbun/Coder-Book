@@ -77,17 +77,21 @@ export default function AutoGrid() {
             <p id="username">Chuck Norris</p>
           </Paper>
           <Paper className={classes.newsFeed}>
-
+            <h1>This is where Left side of the app</h1>
           </Paper>
         </Grid>
         <Grid item xs={12} sm={12} md={6} lg={6}>
           <Paper className={classes.mainFeed}>
             <Chuckticker />
-            <div id="posts"></div>
+            <div id="posts">
+              <h1>This is the spot where the posts will go</h1>
+            </div>
           </Paper>
         </Grid>
         <Grid item xs={12} sm={12} md={3} lg={3}>
-          <Paper className={classes.paper}>xs</Paper>
+          <Paper className={classes.paper}>
+            <h1>This is the right side of the app</h1>
+          </Paper>
         </Grid>
       </Grid>
     </div>

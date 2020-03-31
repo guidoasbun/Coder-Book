@@ -1,13 +1,22 @@
-import React from 'react';
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
+import React, { useContext } from "react";
+import Button from "@material-ui/core/Button";
+import TextField from "@material-ui/core/TextField";
+import Dialog from "@material-ui/core/Dialog";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import UserContext from "../../utils/userContext";
 
 export default function FormDialog() {
+  const {
+    name,
+    email,
+    username,
+    password,
+    handleLogin,
+  } = useContext(UserContext);
+
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -17,13 +26,20 @@ export default function FormDialog() {
   const handleClose = () => {
     setOpen(false);
   };
+  const handleLogin = () => {
+    setOpen(false);
+  };
 
   return (
     <div>
       <Button variant="contained" color="secondary" onClick={handleClickOpen}>
-        Login
+        Login/Register
       </Button>
-      <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="form-dialog-title"
+      >
         <DialogTitle id="form-dialog-title">Login</DialogTitle>
         <DialogContent>
           <DialogContentText>
@@ -50,7 +66,7 @@ export default function FormDialog() {
           <Button onClick={handleClose} color="secondary">
             Cancel
           </Button>
-          <Button onClick={handleClose} color="primary">
+          <Button onClick={handleLogin} color="primary">
             Login
           </Button>
         </DialogActions>
