@@ -4,7 +4,7 @@ import axios from "axios";
 import UserContext from "./utils/userContext";
 import Navbar from "./components/navbar";
 import Sandbox from "./components/sandbox";
-import Chuckticker from "./components/chuckticker";
+import Chuckticker from "./components/chuckticker"
 
 const App = () => {
   const [userState, setUserState] = useState({
