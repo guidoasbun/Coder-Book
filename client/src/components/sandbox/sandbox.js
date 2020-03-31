@@ -25,6 +25,7 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Chuckticker from '../chuckticker';
 import Avatar from '@material-ui/core/Avatar';
+import NewsArea from '../NewsArea';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -77,7 +78,7 @@ export default function AutoGrid() {
             <p id="username">Chuck Norris</p>
           </Paper>
           <Paper className={classes.newsFeed}>
-
+            <NewsArea />
           </Paper>
         </Grid>
         <Grid item xs={12} sm={12} md={6} lg={6}>

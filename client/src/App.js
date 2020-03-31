@@ -3,7 +3,6 @@ import axios from "axios";
 import Navbar from "./components/navbar";
 import Sandbox from "./components/sandbox";
 import Chuckticker from "./components/chuckticker";
-import NewsArea from "./components/NewsArea";
 
 const App = () => {
   const [data, setData] = useState([])
@@ -22,7 +21,6 @@ const App = () => {
 
       <Navbar />
       <Chuckticker />
-      <NewsArea />
       {/*<Sandbox />*/}
 
       <Sandbox />
