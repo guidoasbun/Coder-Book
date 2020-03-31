@@ -76,6 +76,7 @@ export default function AutoGrid() {
             <Avatar alt="Remy Sharp" src="/assets/images/cn.jpg" className={classes.large} />
             <img src="/assets/images/cn.jpg" id="user-photo" alt="user avatar" style={{ width: "70px", borderRadius: "10px" }} />
             <p id="username">Chuck Norris</p>
+            
           </Paper>
           <Paper className={classes.newsFeed}>
             <NewsArea />

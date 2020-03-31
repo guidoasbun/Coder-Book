@@ -5,23 +5,13 @@ import Container from "@material-ui/core/Container";
 import axios from "axios"
 
 const NewsArea = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(1);
   useEffect(() => {
     axios
       .get("https://newsapi.org/v2/top-headlines?category=technology&sortBy=publishedAt&language=en&apiKey=7561e5f155d14e048633335b62c31dde")
-      .then(result => setData(result.data))
-    console.log(data)
-    const dataArr = [ {articles} ], n = {};
-     const newsObj = {
-       source: arr[0],
-       author: arr[1],
-       title: arr[2],
-       url: arr[3],
-       publishedAt: arr[4],
-       content: arr[5]
-     };
-     console.log(newsObj);
-  } );
+       .then (result => { (console.log(result.data))
+         setData(result.data) })
+  }, []);
 
   
   return (
@@ -29,7 +19,7 @@ const NewsArea = () => {
       <CssBaseline />
       <Container fixed>
         <div>
-          {data.totalResults}
+          {data.status}
         </div>
         {/* <Typography {{ backgroundColor: ‘#CFE8FC’, hstyle=eight: ‘100vh’ }} /> */}
       </Container>
