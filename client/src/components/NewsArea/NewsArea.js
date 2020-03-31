@@ -11,13 +11,25 @@ const NewsArea = () => {
       .get("https://newsapi.org/v2/top-headlines?category=technology&sortBy=publishedAt&language=en&apiKey=7561e5f155d14e048633335b62c31dde")
       .then(result => setData(result.data))
     console.log(data)
+    const dataArr = [ {articles} ], n = {};
+     const newsObj = {
+       source: arr[0],
+       author: arr[1],
+       title: arr[2],
+       url: arr[3],
+       publishedAt: arr[4],
+       content: arr[5]
+     };
+     console.log(newsObj);
   } );
+
+  
   return (
     <React.Fragment>
       <CssBaseline />
       <Container fixed>
         <div>
-          {data.status}
+          {data.totalResults}
         </div>
         {/* <Typography {{ backgroundColor: ‘#CFE8FC’, hstyle=eight: ‘100vh’ }} /> */}
       </Container>
