@@ -12,7 +12,7 @@ const Chuckticker = () => {
   useEffect(() => {
     axios.get("https://api.chucknorris.io/jokes/random")
       .then(result => setData(result.data))
-
+    console.log(data)
   }, [])
 
 

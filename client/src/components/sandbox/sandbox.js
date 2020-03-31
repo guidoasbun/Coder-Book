@@ -1,22 +1,3 @@
-// import React from 'react';
-// import CssBaseline from '@material-ui/core/CssBaseline';
-// import Typography from '@material-ui/core/Typography';
-// import Container from '@material-ui/core/Container';
-
-
-// export default function SimpleContainer() {
-//   return (
-//     <React.Fragment>
-//       <CssBaseline />
-//       <Container maxWidth="sm">
-//         <Typography component="div" style={{ backgroundColor: '#cfe8fc', height: '100vh' }} />
-//       </Container>
-//     </React.Fragment>
-//   );
-// }
-
-
-
 
 
 import React from 'react';
@@ -25,6 +6,8 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Chuckticker from '../chuckticker';
 import Avatar from '@material-ui/core/Avatar';
+import NewsArea from '../news';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -72,12 +55,12 @@ export default function AutoGrid() {
       <Grid container spacing={1}>
         <Grid item xs={12} sm={12} md={3} lg={3}>
           <Paper className={classes.userBio}>
-            <Avatar alt="Remy Sharp" src="/assets/images/cn.jpg" className={classes.large} />
+            <Avatar alt="Chuck Norris" src="/assets/images/cn.jpg" className={classes.large} />
             <img src="/assets/images/cn.jpg" id="user-photo" alt="user avatar" style={{ width: "70px", borderRadius: "10px" }} />
             <p id="username">Chuck Norris</p>
           </Paper>
           <Paper className={classes.newsFeed}>
-
+            <NewsArea />
           </Paper>
         </Grid>
         <Grid item xs={12} sm={12} md={6} lg={6}>
