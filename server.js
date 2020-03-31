@@ -29,7 +29,7 @@ passport.use(
   new JWTStrategy(
     {
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-      secretOrKey: "coderbooksecretkey", //will put in .ENV before deployment
+      secretOrKey: process.env.JWT_SECRET, //will put in .ENV before deployment
     },
     (jwtPayload, cb) =>
       User.findById(jwtPayload.id)

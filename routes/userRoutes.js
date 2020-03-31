@@ -54,9 +54,9 @@ router.post(
       };
       jwt.sign(
         payload,
-        "coderbooksecret",  //Must put in .env before deployment
+          process.env.JWT_SECRET,  //Must put in .env before deployment
         {
-          expiresIn: 360000,  //Must switch to 3600 before deployment
+          expiresIn: 3600,  //Must switch to 3600 before deployment
         },
         (err, token) => {
           if (err) throw err;
