@@ -25,6 +25,8 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Chuckticker from '../chuckticker';
 import Avatar from '@material-ui/core/Avatar';
+import NewsArea from '../news';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -72,26 +74,22 @@ export default function AutoGrid() {
       <Grid container spacing={1}>
         <Grid item xs={12} sm={12} md={3} lg={3}>
           <Paper className={classes.userBio}>
-            <Avatar alt="Remy Sharp" src="/assets/images/cn.jpg" className={classes.large} />
+            <Avatar alt="Chuck Norris" src="/assets/images/cn.jpg" className={classes.large} />
             <img src="/assets/images/cn.jpg" id="user-photo" alt="user avatar" style={{ width: "70px", borderRadius: "10px" }} />
             <p id="username">Chuck Norris</p>
           </Paper>
           <Paper className={classes.newsFeed}>
-            <h1>This is where Left side of the app</h1>
+            <NewsArea />
           </Paper>
         </Grid>
         <Grid item xs={12} sm={12} md={6} lg={6}>
           <Paper className={classes.mainFeed}>
             <Chuckticker />
-            <div id="posts">
-              <h1>This is the spot where the posts will go</h1>
-            </div>
+            <div id="posts"></div>
           </Paper>
         </Grid>
         <Grid item xs={12} sm={12} md={3} lg={3}>
-          <Paper className={classes.paper}>
-            <h1>This is the right side of the app</h1>
-          </Paper>
+          <Paper className={classes.paper}>xs</Paper>
         </Grid>
       </Grid>
     </div>

@@ -7,6 +7,7 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import UserContext from "../../utils/userContext";
+import CustomizedExpansionPanels from '../register'
 
 export default function FormDialog() {
   const {
@@ -26,21 +27,15 @@ export default function FormDialog() {
   const handleClose = () => {
     setOpen(false);
   };
-  const handleLogin = () => {
-    setOpen(false);
-  };
 
   return (
     <div>
       <Button variant="contained" color="secondary" onClick={handleClickOpen}>
-        Login/Register
+        Login / Sign Up
       </Button>
-      <Dialog
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="form-dialog-title"
-      >
+      <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
         <DialogTitle id="form-dialog-title">Login</DialogTitle>
+
         <DialogContent>
           <DialogContentText>
             Please enter username/email address and password to continue.
@@ -70,7 +65,8 @@ export default function FormDialog() {
             Login
           </Button>
         </DialogActions>
+        <CustomizedExpansionPanels />
       </Dialog>
-    </div>
+    </div >
   );
 }
