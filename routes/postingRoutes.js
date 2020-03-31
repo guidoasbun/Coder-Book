@@ -7,8 +7,8 @@ const { check, validationResult } = require("express-validator");
 /*-------------------------------------------------------------------------------*/
 
 //@route     GET api/postings
-//@desc      Get all users postings
-//@access    Private
+//@desc      Get all postings
+//@access    Public
 
 router.get("/postings", async (req, res) => {
   try {
