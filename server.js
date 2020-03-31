@@ -41,8 +41,6 @@ passport.use(
 //Middleware for React, serves to build folder for deployment
 app.use(express.static(join(__dirname, "client", "build")));
 
-
-
 //Models
 require("./models");
 
@@ -51,7 +49,5 @@ app.use(require("./routes"));
 
 //Router
 require("./config")
-  .then(() => app.listen(3001))
+  .then(() => app.listen(process.env.PORT || 3001))
   .catch((e) => console.error(e));
-
-
