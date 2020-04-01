@@ -7,6 +7,7 @@ const UserContext = createContext({
   password: "",
   user: {},
   handleInputChange: () => {},
+  handleLogin: () => {},
   handleRegisterUser: () => {},
 });
 

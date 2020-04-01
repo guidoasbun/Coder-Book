@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -12,6 +12,8 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import UserContext from "../../utils/userContext";
+
 
 function Copyright() {
   return (
@@ -47,7 +49,26 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SignUp() {
+  const {
+    name,
+    email,
+    username,
+    password,
+    handleRegisterUser,
+    handleInputChange
+  } = useContext(UserContext);
+
+
+  // const handleRegisterUser = event =>{
+  //   console.log('registeruser')
+  //   console.log()
+  //   // event.preventDefault()
+  //
+  // }
+
+
   const classes = useStyles();
+
 
   return (
     <Container component="main" maxWidth="xs">
@@ -64,25 +85,30 @@ export default function SignUp() {
             <Grid item xs={12} >
               <TextField
                 autoComplete="name"
+
                 name="name"
+                value={name}
                 variant="outlined"
                 required
                 fullWidth
                 id="name"
                 label="Name"
                 autoFocus
+                onChange={handleInputChange}
               />
             </Grid>
             <Grid item xs={12} >
               <TextField
                 autoComplete="username"
                 name="username"
+                value={username}
                 variant="outlined"
                 required
                 fullWidth
                 id="username"
                 label="Username"
                 autoFocus
+                onChange={handleInputChange}
               />
             </Grid>
             <Grid item xs={12}>
@@ -91,9 +117,11 @@ export default function SignUp() {
                 required
                 fullWidth
                 id="email"
+                value={email}
                 label="Email Address"
                 name="email"
                 autoComplete="email"
+                onChange={handleInputChange}
               />
             </Grid>
             <Grid item xs={12}>
@@ -102,10 +130,12 @@ export default function SignUp() {
                 required
                 fullWidth
                 name="password"
+                value={password}
                 label="Password"
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                onChange={handleInputChange}
               />
             </Grid>
             <Grid item xs={12}>
@@ -121,6 +151,7 @@ export default function SignUp() {
             variant="contained"
             color="primary"
             className={classes.submit}
+            onClick={handleRegisterUser}
           >
             Sign Up
           </Button>

@@ -13,7 +13,7 @@ const app = express();
 app.use(express.static(join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.json({ extended: false }));
+// app.use(express.json({ extended: false }));
 
 //Middleware for authentication
 
@@ -48,6 +48,6 @@ require("./models");
 app.use(require("./routes"));
 
 //Router
-require("./config").sync()
+require("./config")
   .then(() => app.listen(process.env.PORT || 3001))
   .catch((e) => console.error(e));
