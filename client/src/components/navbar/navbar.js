@@ -73,11 +73,6 @@ export default function SearchAppBar() {
   const classes = useStyles();
 
 
-  const handleLogin = () => {
-    console.log('ping')
-  }
-
-
   return (
     <div className={classes.root}>
       <AppBar position="static">
@@ -94,7 +89,7 @@ export default function SearchAppBar() {
           <Typography className={classes.title} variant="h6" noWrap>
             <img style={{ width: "200px" }} src="/assets/images/coder_book.png" />
           </Typography>
-          <Button onClick={handleLogin} color="inherit"><LoginModal /></Button>
+          <Button  color="inherit"><LoginModal /></Button>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />

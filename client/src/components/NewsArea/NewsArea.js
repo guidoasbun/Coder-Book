@@ -9,17 +9,16 @@ const NewsArea = () => {
   useEffect(() => {
     axios
       .get("https://newsapi.org/v2/top-headlines?category=technology&sortBy=publishedAt&language=en&apiKey=7561e5f155d14e048633335b62c31dde")
-       .then (result => { (console.log(result.data))
-         setData(result.data) })
+       .then (result => { console.log(result.data.articles)
+         setData(result.data.articles) })
   }, []);
-
   
   return (
     <React.Fragment>
       <CssBaseline />
       <Container fixed>
         <div>
-          {data.status}
+          {}
         </div>
         {/* <Typography {{ backgroundColor: ‘#CFE8FC’, hstyle=eight: ‘100vh’ }} /> */}
       </Container>

@@ -10,9 +10,9 @@ const Chuckticker = () => {
   const [data, setData] = useState([])
 
   useEffect(() => {
-    axios.get("https://api.chucknorris.io/jokes/random")
+    axios.get("https://api.chucknorris.io/jokes/random?category=dev")
       .then(result => setData(result.data))
-
+    console.log(data)
   }, [])
 
 

@@ -1,13 +1,23 @@
-import React from 'react';
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
+import React, { useContext } from "react";
+import Button from "@material-ui/core/Button";
+import TextField from "@material-ui/core/TextField";
+import Dialog from "@material-ui/core/Dialog";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import UserContext from "../../utils/userContext";
+import CustomizedExpansionPanels from '../register'
 
 export default function FormDialog() {
+  const {
+    name,
+    email,
+    username,
+    password,
+    handleLogin,
+  } = useContext(UserContext);
+
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -21,10 +31,11 @@ export default function FormDialog() {
   return (
     <div>
       <Button variant="contained" color="secondary" onClick={handleClickOpen}>
-        Login
+        Login / Sign Up
       </Button>
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
         <DialogTitle id="form-dialog-title">Login</DialogTitle>
+
         <DialogContent>
           <DialogContentText>
             Please enter username/email address and password to continue.
@@ -50,11 +61,12 @@ export default function FormDialog() {
           <Button onClick={handleClose} color="secondary">
             Cancel
           </Button>
-          <Button onClick={handleClose} color="primary">
+          <Button onClick={handleLogin} color="primary">
             Login
           </Button>
         </DialogActions>
+        <CustomizedExpansionPanels />
       </Dialog>
-    </div>
+    </div >
   );
 }

@@ -25,12 +25,17 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Chuckticker from '../chuckticker';
 import Avatar from '@material-ui/core/Avatar';
-import NewsArea from '../NewsArea';
+import NewsArea from '../news';
+import CodeChallenge from '../codeChallenge'
+import AceEditor from '../codeEditor';
+
+
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    marginTop: '10px',
+    margin: '5px',
   },
   paper: {
     padding: theme.spacing(2),
@@ -73,7 +78,7 @@ export default function AutoGrid() {
       <Grid container spacing={1}>
         <Grid item xs={12} sm={12} md={3} lg={3}>
           <Paper className={classes.userBio}>
-            <Avatar alt="Remy Sharp" src="/assets/images/cn.jpg" className={classes.large} />
+            <Avatar alt="Chuck Norris" src="/assets/images/cn.jpg" className={classes.large} />
             <img src="/assets/images/cn.jpg" id="user-photo" alt="user avatar" style={{ width: "70px", borderRadius: "10px" }} />
             <p id="username">Chuck Norris</p>
             
@@ -89,7 +94,7 @@ export default function AutoGrid() {
           </Paper>
         </Grid>
         <Grid item xs={12} sm={12} md={3} lg={3}>
-          <Paper className={classes.paper}>xs</Paper>
+          <Paper className={classes.paper}><CodeChallenge /> </Paper>
         </Grid>
       </Grid>
     </div>
