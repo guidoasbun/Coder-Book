@@ -2,11 +2,10 @@ import React, { useEffect, useState, Fragment } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import axios from "axios";
 import UserContext from "./utils/userContext";
-
 import Navbar from "./components/navbar";
-
 import Sandbox from "./components/sandbox";
-import Chuckticker from "./components/chuckticker";
+
+
 
 const App = () => {
   const [userState, setUserState] = useState({

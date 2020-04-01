@@ -26,12 +26,16 @@ import Grid from '@material-ui/core/Grid';
 import Chuckticker from '../chuckticker';
 import Avatar from '@material-ui/core/Avatar';
 import NewsArea from '../news';
+import CodeChallenge from '../codeChallenge'
+import AceEditor from '../codeEditor';
+
+
 
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    marginTop: '10px',
+    margin: '5px',
   },
   paper: {
     padding: theme.spacing(2),
@@ -89,7 +93,7 @@ export default function AutoGrid() {
           </Paper>
         </Grid>
         <Grid item xs={12} sm={12} md={3} lg={3}>
-          <Paper className={classes.paper}>xs</Paper>
+          <Paper className={classes.paper}><CodeChallenge /> </Paper>
         </Grid>
       </Grid>
     </div>
