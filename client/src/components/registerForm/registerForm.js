@@ -85,7 +85,6 @@ export default function SignUp() {
             <Grid item xs={12} >
               <TextField
                 autoComplete="name"
-
                 name="name"
                 value={name}
                 variant="outlined"

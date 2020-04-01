@@ -16,6 +16,7 @@ export default function FormDialog() {
     username,
     password,
     handleLogin,
+      handleInputChange
   } = useContext(UserContext);
 
   const [open, setOpen] = React.useState(false);
@@ -42,19 +43,25 @@ export default function FormDialog() {
           </DialogContentText>
           <TextField
             autoFocus
+            name="username"
+            value={username}
             margin="dense"
             id="username"
             label="Username"
             type="text"
             fullWidth
+            onChange={handleInputChange}
           />
           <TextField
             autoFocus
+            name="password"
+            value={password}
             margin="dense"
             id="password"
             label="Password"
             type="password"
             fullWidth
+            onChange={handleInputChange}
           />
         </DialogContent>
         <DialogActions>
