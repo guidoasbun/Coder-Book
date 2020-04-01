@@ -14,7 +14,7 @@ const NewsArea = () => {
 
 
   const fetchData = () => {
-    const newsAPI = 'https://newsapi.org/v2/top-headlines?source=techcrunch&language=en&sortBy=publishedAt&apiKey=7561e5f155d14e048633335b62c31dde'
+    const newsAPI = 'https://newsapi.org/v2/top-headlines?sources=techcrunch&language=en&sortBy=publishedAt&apiKey=7561e5f155d14e048633335b62c31dde'
 
     const getArticle = axios.get(newsAPI)
     axios.all([getArticle]).then(
