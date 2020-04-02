@@ -15,10 +15,10 @@ const UserSchema = new Schema({
     required: true,
     unique: true,
   },
-  password: {
-    type: String,
-    required: true
-  },
+  // password: {
+  //   type: String,
+  //   required: true
+  // },
   dateAccountCreated: {
     type: Date,
     default: Date.now,

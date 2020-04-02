@@ -29,7 +29,7 @@ const App = () => {
   userState.handleLogin = (event) => {
     event.preventDefault();
     axios
-      .post("api/auth", {
+      .post("api/users/login", {
         username: userState.username,
         password: userState.password,
       })
@@ -50,7 +50,7 @@ const App = () => {
       password: userState.password,
     };
     axios
-      .post("/api/register", {
+      .post("/api/users/register", {
         name: user.name,
         username: user.username,
         email: user.email,
