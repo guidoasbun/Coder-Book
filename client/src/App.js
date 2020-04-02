@@ -36,7 +36,7 @@ const App = () => {
       .then(({ data }) => {
         console.log(data);
         localStorage.setItem("jwt", data.token);
-        window.location = "/home";
+        // window.location = "/home";
         console.log(data.token);
       });
   };
