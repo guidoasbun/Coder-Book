@@ -47,9 +47,9 @@ require("./models");
 //Routes
 app.use(require("./routes"));
 
-app.use("/*", (req,res) => {
-  res.sendFile(join(__dirname, 'client', 'build', 'index.html'));
-})
+// app.use("/*", (req,res) => {
+//   res.sendFile(join(__dirname, 'client', 'build', 'index.html'));
+// })
 
 //Router
 require("./config")
