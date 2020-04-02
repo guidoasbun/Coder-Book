@@ -1,5 +1,11 @@
 import React, { useEffect, useState, Fragment } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Link,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
 import axios from "axios";
 import UserContext from "./utils/userContext";
 import Navbar from "./components/navbar";
@@ -21,8 +27,19 @@ const App = () => {
     setUserState({ ...userState, [target.name]: target.value });
   };
 
-  userState.handleLogin = () => {
-    console.log("pings");
+  userState.handleLogin = (event) => {
+    event.preventDefault();
+    axios
+      .post("api/users/login", {
+        username: userState.username,
+        password: userState.password,
+      })
+      .then(({ data }) => {
+        console.log(data);
+        localStorage.setItem("jwt", data.token);
+        window.location = "/home";
+        console.log(data.token);
+      });
   };
 
   userState.handleRegisterUser = (event) => {
@@ -40,7 +57,12 @@ const App = () => {
         email: user.email,
         password: user.password,
       })
-      .then(() => console.log('account created'));
+      .then(({ data }) => {
+        console.log(data);
+        localStorage.setItem("jwt", data.token);
+        window.location = "/home";
+        console.log(data.token);
+      });
     setUserState({
       ...userState,
       user,
@@ -55,9 +77,14 @@ const App = () => {
       <Router>
         <Fragment>
           <Navbar />
-
           <Switch>
-            <Sandbox />
+            <Route exact path="/">
+              <h1>This is the Welcome screen</h1>
+              <h1>Log in or sign up to access site</h1>
+            </Route>
+            <Route path="/home">
+              <Sandbox />
+            </Route>
           </Switch>
         </Fragment>
       </Router>

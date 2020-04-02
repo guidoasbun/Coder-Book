@@ -1,28 +1,28 @@
-const router = require('express').Router()
-const { User } = require('../models')
-const jwt = require('jsonwebtoken')
-// const { check, validationResult } = require("express-validator");
-// const bcrypt = require("bcryptjs");
+const router = require("express").Router();
+const { User } = require("../models");
+const jwt = require("jsonwebtoken");
+const { check, validationResult } = require("express-validator");
+const bcrypt = require("bcryptjs");
 /*-----------------------------------------------------------------------*/
 
-// Route to register a new user with password
+// // Route to register a new user with password
 router.post("/users/register", (req, res) => {
   User.register(
-      new User({
-        name: req.body.name,
-        username: req.body.username,
-        email: req.body.email,
-      }),
-      req.body.password,
-      (err) => {
-        if (err) throw err;
-        res.sendStatus(200);
-      }
+    new User({
+      name: req.body.name,
+      username: req.body.username,
+      email: req.body.email,
+    }),
+    req.body.password,
+    (err) => {
+      if (err) throw err;
+      res.sendStatus(200);
+    }
   );
 });
-
-//Route to log in a user with password that returns: user from login
-//isLoggedIn, postings, user, token
+//
+// //Route to log in a user with password that returns: user from login
+// //isLoggedIn, postings, user, token
 router.post("/users/login", (req, res) => {
   User.authenticate()(req.body.username, req.body.password, (err, user) => {
     if (err) throw err;
@@ -38,10 +38,9 @@ router.post("/users/login", (req, res) => {
   });
 });
 //
-module.exports = router
+module.exports = router;
 
 
-//
 // //@route     POST api/register
 // //@desc      Register a user
 // //@access    Public
@@ -61,28 +60,28 @@ module.exports = router
 //     if (!errors.isEmpty()) {
 //       return res.status(400).json({ errors: errors.array() });
 //     }
-//
+
 //     const { name, email, username, password } = req.body;
 //     try {
 //       let user = await User.findOne({ email });
-//
+
 //       if (user) {
 //         return res.status(400).json({ msg: "User already exists" });
 //       }
-//
+
 //       user = new User({
 //         name,
 //         email,
 //         username,
 //         password,
 //       });
-//
+
 //       const salt = await bcrypt.genSalt(10);
-//
+
 //       user.password = await bcrypt.hash(password, salt);
-//
+
 //       await user.save();
-//
+
 //       const payload = {
 //         user: {
 //           id: user.id,
@@ -105,9 +104,7 @@ module.exports = router
 //     }
 //   }
 // );
-//
+
 // module.exports = router;
 
 /*-----------------------------------------------------------------------*/
-
-
