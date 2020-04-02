@@ -87,9 +87,9 @@ export default function SearchAppBar() {
           </IconButton>
 
           <Typography className={classes.title} variant="h6" noWrap>
-            <img style={{ width: "200px" }} src="/assets/images/coder_book.png" />
+            <a href="/home"><img style={{ width: "200px" }} src="/assets/images/coder_book.png" /></a>
           </Typography>
-          <Button  color="inherit"><LoginModal /></Button>
+          <Button color="inherit"><LoginModal /></Button>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
