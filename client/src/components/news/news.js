@@ -3,6 +3,8 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import axios from 'axios'
+import Carousel from 'react-material-ui-carousel'
+import Paper from '@material-ui/core'
 
 
 
@@ -40,10 +42,12 @@ const NewsArea = () => {
 
   return (
     <>
-      <h1>{data}</h1>
-      <img src={newsPic} />
-      <div>{newsUrl}</div>
-      <div>{newsContent}</div>
+    <Carousel>
+      <h1>{data, data[1]}</h1>
+      <img src={newsPic, newsPic[1]} />
+      <div>{newsUrl, newsUrl[1]}</div>
+      <div>{newsContent, newsContent[1]}</div>
+    </Carousel>
     </>
 
   )
