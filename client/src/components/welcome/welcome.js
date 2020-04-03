@@ -29,6 +29,7 @@ function Copyright() {
 const useStyles = makeStyles((theme) => ({
   root: {
     height: '100vh',
+    backgroundColor: '#d9d9d9',
   },
   image: {
     backgroundImage: 'url(https://source.unsplash.com/featured/?code,developer)',
@@ -43,6 +44,8 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    backgroundColor: '#d9d9d9'
+
 
   },
   avatar: {
@@ -67,14 +70,15 @@ export default function SignInSide() {
       <Grid item xs={false} sm={4} md={7} className={classes.image} />
       <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
         <div className={classes.paper}>
-          Welcome to Coder Book
+
           {/* <Avatar className={classes.avatar}>
             <LockOutlinedIcon />
           </Avatar> */}
-          {/* <Typography component="h1" variant="h5">
-            Sign in
-          </Typography> */}
-          {/* <form className={classes.form} noValidate>
+          <Typography component="h1" variant="h5">
+            <img style={{ width: '100%' }} src="/assets/images/WelcomeCBLogo.jpeg" />
+          </Typography>
+          {/* 
+          <form className={classes.form} noValidate>
             <TextField
               variant="outlined"
               margin="normal"
@@ -120,14 +124,14 @@ export default function SignInSide() {
                 <Link href="#" variant="body2">
                   {"Don't have an account? Sign Up"}
                 </Link>
-              </Grid>
-            </Grid>
-            <Box mt={5}>
-              <Copyright />
-            </Box>
-          </form> */}
+              </Grid> */}
+          {/* </Grid> */}
+          {/* <Box mt={5}>
+            <Copyright />
+          </Box> */}
+          {/* </form> */}
         </div>
-      </Grid>
-    </Grid>
+      </Grid >
+    </Grid >
   );
 }

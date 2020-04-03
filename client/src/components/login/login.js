@@ -9,8 +9,20 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import UserContext from "../../utils/userContext";
 import CustomizedExpansionPanels from '../register'
 import SignIn from '../signIn'
+import { makeStyles } from '@material-ui/core/styles'
+
+const useStyles = makeStyles(() => ({
+  title: {
+    backgroundColor: '#3f51b5',
+
+
+  }
+}))
+
 
 export default function FormDialog() {
+  const classes = useStyles()
+
   const {
     name,
     email,
@@ -36,10 +48,10 @@ export default function FormDialog() {
         Sign In / Sign Up
       </Button>
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
-        <DialogTitle id="form-dialog-title">Sign In</DialogTitle>
+        <DialogTitle className={classes.title} id="form-dialog-title" > <img src="/assets/images/coder_book.png" style={{ height: '60px' }} /></DialogTitle>
 
-        <DialogContent>
-          {/* <DialogContentText>
+        {/* <DialogContent> */}
+        {/* <DialogContentText>
             Please enter username/email address and password to continue.
           </DialogContentText>
           <TextField
@@ -65,17 +77,17 @@ export default function FormDialog() {
             onChange={handleInputChange}
           /> */}
 
-          <SignIn />
+        {/* <SignIn /> */}
 
 
-        </DialogContent>
+        {/* </DialogContent> */}
         <DialogActions>
-          <Button onClick={handleClose} color="secondary">
+          {/* <Button onClick={handleClose} color="secondary">
             Cancel
-          </Button>
-          <Button onClick={handleLogin} color="primary">
+          </Button> */}
+          {/* <Button onClick={handleLogin} color="primary">
             Sign In
-          </Button>
+          </Button> */}
         </DialogActions>
         <CustomizedExpansionPanels />
       </Dialog>
