@@ -84,6 +84,7 @@ export default function AutoGrid() {
           </Paper>
           <Paper className={classes.newsFeed}>
             <NewsArea />
+
           </Paper>
         </Grid>
         <Grid item xs={12} sm={12} md={6} lg={6}>

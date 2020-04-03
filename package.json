@@ -21,7 +21,8 @@
     "react-ace": "^8.1.0",
     "react-router-dom": "^5.1.2",
     "react-ticker": "^1.2.2",
-    "react-transition-group": "^4.3.0"
+    "react-transition-group": "^4.3.0",
+    "typeface-roboto": "0.0.75"
   },
   "devDependencies": {},
   "scripts": {
