@@ -29,6 +29,8 @@ router.post("/users/login", (req, res) => {
     res.json({
       isLoggedIn: !!user,
       name: user.name,
+      username: user.username,
+      _id: user._id,
       email: user.email,
       dateAccountCreated: user.dateAccountCreated,
       postings: user.postings,

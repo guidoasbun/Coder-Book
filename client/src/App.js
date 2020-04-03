@@ -35,6 +35,9 @@ const App = () => {
       })
       .then(({ data }) => {
         console.log(data);
+        localStorage.setItem("name", data.name);
+        localStorage.setItem("username", data.username);
+        localStorage.setItem("id", data._id);
         localStorage.setItem("jwt", data.token);
         // window.location = "/home";
         console.log(data.token);
@@ -58,13 +61,16 @@ const App = () => {
       })
       .then(({ data }) => {
         console.log(data);
+        localStorage.setItem("name", data.name);
+        localStorage.setItem("username", data.username);
+        localStorage.setItem("id", data._id);
         localStorage.setItem("jwt", data.token);
         window.location = "/home";
         console.log(data.token);
       });
     setUserState({
       ...userState,
-      user,
+      user: "",
       username: "",
       email: "",
       password: "",
