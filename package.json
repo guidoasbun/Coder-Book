@@ -18,7 +18,8 @@
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^6.0.1",
     "react-ace": "^8.1.0",
-    "react-ticker": "^1.2.2"
+    "react-ticker": "^1.2.2",
+    "typeface-roboto": "0.0.75"
   },
   "devDependencies": {},
   "scripts": {
