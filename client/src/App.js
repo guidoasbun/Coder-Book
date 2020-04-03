@@ -94,7 +94,7 @@ const App = () => {
         <Fragment>
           <Navbar />
           <Switch>
-            <Route exact path="/welcome">
+            <Route exact path="/">
               <Welcome />
             </Route>
             <Route path="/home">
