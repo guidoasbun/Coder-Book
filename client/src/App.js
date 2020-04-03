@@ -10,6 +10,8 @@ import axios from "axios";
 import UserContext from "./utils/userContext";
 import Navbar from "./components/navbar";
 import Sandbox from "./components/sandbox";
+import Welcome from "./components/welcome"
+
 
 const App = () => {
   const [userState, setUserState] = useState({
@@ -92,9 +94,8 @@ const App = () => {
         <Fragment>
           <Navbar />
           <Switch>
-            <Route exact path="/">
-              <h1>This is the Welcome screen</h1>
-              <h1>Log in or sign up to access site</h1>
+            <Route exact path="/welcome">
+              <Welcome />
             </Route>
             <Route path="/home">
               <Sandbox />
@@ -102,7 +103,7 @@ const App = () => {
           </Switch>
         </Fragment>
       </Router>
-    </UserContext.Provider>
+    </UserContext.Provider >
   );
 };
 
