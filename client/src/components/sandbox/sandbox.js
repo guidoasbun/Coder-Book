@@ -28,6 +28,7 @@ import Avatar from '@material-ui/core/Avatar';
 import NewsArea from '../news';
 import CodeChallenge from '../codeChallenge'
 import AceEditor from '../codeEditor';
+import CreatePosting from '../createPosting';
 
 
 
@@ -81,6 +82,7 @@ export default function AutoGrid() {
             <Avatar alt="Chuck Norris" src="/assets/images/cn.jpg" className={classes.large} />
             <img src="/assets/images/cn.jpg" id="user-photo" alt="user avatar" style={{ width: "70px", borderRadius: "10px" }} />
             <p id="username">Chuck Norris</p>
+            <CreatePosting/>
           </Paper>
           <Paper className={classes.newsFeed}>
             <NewsArea />
@@ -89,7 +91,9 @@ export default function AutoGrid() {
         <Grid item xs={12} sm={12} md={6} lg={6}>
           <Paper className={classes.mainFeed}>
             <Chuckticker />
-            <div id="posts"></div>
+            <div id="posts">
+              
+            </div>
           </Paper>
         </Grid>
         <Grid item xs={12} sm={12} md={3} lg={3}>

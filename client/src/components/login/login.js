@@ -16,7 +16,7 @@ export default function FormDialog() {
     username,
     password,
     handleLogin,
-      handleInputChange
+    handleInputChange
   } = useContext(UserContext);
 
   const [open, setOpen] = React.useState(false);

@@ -11,8 +11,6 @@ import UserContext from "./utils/userContext";
 import Navbar from "./components/navbar";
 import Sandbox from "./components/sandbox";
 
-
-
 const App = () => {
   const [userState, setUserState] = useState({
     name: "",
@@ -34,13 +32,12 @@ const App = () => {
         password: userState.password,
       })
       .then(({ data }) => {
-        console.log(data);
         localStorage.setItem("name", data.name);
         localStorage.setItem("username", data.username);
         localStorage.setItem("id", data._id);
         localStorage.setItem("jwt", data.token);
-        // window.location = "/home";
-        console.log(data.token);
+        window.location = "/home";
+        console.log(data);
       });
   };
 
@@ -60,13 +57,11 @@ const App = () => {
         password: user.password,
       })
       .then(({ data }) => {
-        console.log(data);
         localStorage.setItem("name", data.name);
         localStorage.setItem("username", data.username);
         localStorage.setItem("id", data._id);
         localStorage.setItem("jwt", data.token);
         window.location = "/home";
-        console.log(data.token);
       });
     setUserState({
       ...userState,
