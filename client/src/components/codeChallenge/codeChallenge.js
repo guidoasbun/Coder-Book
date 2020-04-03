@@ -11,16 +11,19 @@ import AceEditor from '../codeEditor';
 
 const useStyles = makeStyles({
   root: {
-    Width: 345,
-    backgroundColor: '#e8eaf6'
+    maxWidth: 500,
+    backgroundColor: '#e8eaf6',
+    margin: 'auto'
   },
   media: {
-    height: 240,
+    height: 300,
+    margin: 'auto',
+    backgroundColor: 'white',
 
-
-    backgroundColor: 'white'
   },
 });
+
+
 
 export default function CodeChallenge() {
   const classes = useStyles();
