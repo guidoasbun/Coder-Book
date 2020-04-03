@@ -25,7 +25,7 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Chuckticker from '../chuckticker';
 import Avatar from '@material-ui/core/Avatar';
-import NewsArea from '../news';
+import MediaCard from '../news';
 import CodeChallenge from '../codeChallenge'
 import AceEditor from '../codeEditor';
 
@@ -84,7 +84,7 @@ export default function AutoGrid() {
             
           </Paper>
           <Paper className={classes.newsFeed}>
-            <NewsArea />
+            <MediaCard />
           </Paper>
         </Grid>
         <Grid item xs={12} sm={12} md={6} lg={6}>
