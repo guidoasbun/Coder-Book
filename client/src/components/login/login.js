@@ -11,6 +11,8 @@ import CustomizedExpansionPanels from '../register'
 import SignIn from '../signIn'
 import { makeStyles } from '@material-ui/core/styles'
 
+
+
 const useStyles = makeStyles(() => ({
   title: {
     backgroundColor: '#3f51b5',
@@ -18,7 +20,6 @@ const useStyles = makeStyles(() => ({
 
   }
 }))
-
 
 export default function FormDialog() {
   const classes = useStyles()
@@ -50,11 +51,14 @@ export default function FormDialog() {
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
         <DialogTitle className={classes.title} id="form-dialog-title" > <img src="/assets/images/coder_book.png" style={{ height: '60px' }} /></DialogTitle>
 
+
+
+
         {/* <DialogContent> */}
         {/* <DialogContentText>
             Please enter username/email address and password to continue.
-          </DialogContentText>
-          <TextField
+          </DialogContentText> */}
+        {/* <TextField
             autoFocus
             name="username"
             value={username}
@@ -81,14 +85,14 @@ export default function FormDialog() {
 
 
         {/* </DialogContent> */}
-        <DialogActions>
-          {/* <Button onClick={handleClose} color="secondary">
+        {/* <DialogActions> */}
+        {/* <Button onClick={handleClose} color="secondary">
             Cancel
-          </Button> */}
-          {/* <Button onClick={handleLogin} color="primary">
+          </Button>
+          <Button onClick={handleLogin} color="primary">
             Sign In
           </Button> */}
-        </DialogActions>
+        {/* </DialogActions> */}
         <CustomizedExpansionPanels />
       </Dialog>
     </div >
