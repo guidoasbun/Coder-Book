@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -12,6 +12,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import UserContext from "../../utils/userContext";
 
 function Copyright() {
   return (
@@ -49,6 +50,15 @@ const useStyles = makeStyles((theme) => ({
 export default function SignIn() {
   const classes = useStyles();
 
+  const {
+    name,
+    email,
+    username,
+    password,
+    handleLogin,
+    handleInputChange
+  } = useContext(UserContext);
+
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -65,11 +75,13 @@ export default function SignIn() {
             margin="normal"
             required
             fullWidth
-            id="email"
-            label="Email Address"
-            name="email"
-            autoComplete="email"
+            id="username"
+            label="Username"
+            name="username"
+            value={username}
+            autoComplete="username"
             autoFocus
+            onChange={handleInputChange}
           />
           <TextField
             variant="outlined"
@@ -77,16 +89,18 @@ export default function SignIn() {
             required
             fullWidth
             name="password"
+            value={password}
             label="Password"
             type="password"
             id="password"
             autoComplete="current-password"
+            onChange={handleInputChange}
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
           />
-          <Button
+          <Button onClick={handleLogin}
             type="submit"
             fullWidth
             variant="contained"
