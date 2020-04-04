@@ -34,10 +34,12 @@ const App = () => {
         password: userState.password,
       })
       .then(({ data }) => {
-        console.log(data);
+        localStorage.setItem("name", data.name);
+        localStorage.setItem("username", data.username);
+        localStorage.setItem("id", data._id);
         localStorage.setItem("jwt", data.token);
         window.location = "/home";
-        console.log(data.token);
+        console.log(data);
       });
   };
 
@@ -56,19 +58,34 @@ const App = () => {
         email: user.email,
         password: user.password,
       })
-      .then(({ data }) => {
-        console.log(data);
-        localStorage.setItem("jwt", data.token);
-        window.location = "/home";
-        console.log(data.token);
+      .then(( data ) => {
+        axios
+          .post("api/users/login", {
+            username: userState.username,
+            password: userState.password,
+          })
+          .then(({ data }) => {
+            localStorage.setItem("name", data.name);
+            localStorage.setItem("username", data.username);
+            localStorage.setItem("id", data._id);
+            localStorage.setItem("jwt", data.token);
+            window.location = "/home";
+            console.log(data);
+          });
+        // console.log(data)
+        // localStorage.setItem("name", data.name);
+        // localStorage.setItem("username", data.username);
+        // localStorage.setItem("id", data._id);
+        // localStorage.setItem("jwt", data.token);
+        // window.location = "/home";
       });
-    setUserState({
-      ...userState,
-      user,
-      username: "",
-      email: "",
-      password: "",
-    });
+    // setUserState({
+    //   ...userState,
+    //   user: "",
+    //   username: "",
+    //   email: "",
+    //   password: "",
+    // });
   };
 
   return (
@@ -77,7 +94,7 @@ const App = () => {
         <Fragment>
           <Navbar />
           <Switch>
-            <Route exact path="/welcome">
+            <Route exact path="/">
               <Welcome />
             </Route>
             <Route path="/home">

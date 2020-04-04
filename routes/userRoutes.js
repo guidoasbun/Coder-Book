@@ -7,6 +7,7 @@ const bcrypt = require("bcryptjs");
 
 // // Route to register a new user with password
 router.post("/users/register", (req, res) => {
+  console.log(req.body)
   User.register(
     new User({
       name: req.body.name,
@@ -29,6 +30,8 @@ router.post("/users/login", (req, res) => {
     res.json({
       isLoggedIn: !!user,
       name: user.name,
+      username: user.username,
+      _id: user._id,
       email: user.email,
       dateAccountCreated: user.dateAccountCreated,
       postings: user.postings,
