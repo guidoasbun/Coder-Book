@@ -14,7 +14,7 @@ const useStyles = makeStyles({
     maxWidth: 300,
   },
   media: {
-    height: 200,
+    height: 100,
   },
 });
 
@@ -55,7 +55,7 @@ export default function MediaCard() {
           image={newsPic}
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
+          <Typography gutterBottom variant="h" component="h3">
             {data}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
@@ -64,7 +64,7 @@ export default function MediaCard() {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button href={newsUrl} target="_blank" position="center" size="small" color="primary">
+        <Button href={newsUrl} target="_blank" size="small" color="primary">
           Learn More
                 </Button>
       </CardActions>
