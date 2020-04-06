@@ -91,7 +91,7 @@ export default function SearchAppBar() {
             <a href="/home"><img style={{ width: "200px" }} src="/assets/images/coder_book.png" /></a>
           </Typography>
           <Button color="inherit"><LoginModal /></Button>
-          <div className={classes.search}>
+          {/* <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
             </div>
@@ -103,7 +103,7 @@ export default function SearchAppBar() {
               }}
               inputProps={{ 'aria-label': 'search' }}
             />
-          </div>
+          </div> */}
           <Button href="/welcome"><ExitToAppIcon /></Button>
         </Toolbar>
       </AppBar>

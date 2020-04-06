@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -8,6 +8,11 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import AceEditor from '../codeEditor';
+import axios from 'axios'
+import SimpleCard from './solution';
+import LoginModal from '../login'
+import SolutionModal from './solution';
+
 
 const useStyles = makeStyles({
   root: {
@@ -25,8 +30,37 @@ const useStyles = makeStyles({
 
 
 
+
+
+
+
 export default function CodeChallenge() {
   const classes = useStyles();
+
+  // const [data, setData] = useState([])
+  // const [challengeName, setChallengeName] = useState([])
+  // const [challengeDescription, setChallengeDescription] = useState([])
+  // const [challangeUrl, setChallengeUrl] = useState([])
+
+  // const fetchData = () => {
+  //   const challengeAPI = 'https://www.codewars.com/api/v1/code-challenges/is-it-even?access_key=hmdFJBAvrHChPezjGjqJ'
+
+  //   const getChallenge = axios.get(challengeAPI)
+  //   console.log(getChallenge)
+  //   axios.all([getChallenge]).then(
+  //     axios.spread((...allData) => {
+  //       const allDataName = allData[0].data.value
+
+  //       setChallengeName(allDataName)
+  //     })
+  //   )
+
+  // }
+  // useEffect(() => {
+  //   fetchData()
+  // }, [])
+
+
 
   return (
     <Card className={classes.root}>
@@ -39,31 +73,42 @@ export default function CodeChallenge() {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Sum of Minimums!
+            Maximum Multiple
+            
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Given a 2D array of size m * n. Your task is to find the sum of minimum value in each row.
-            <br />
-            [
-            [1, 2, 3, 4, 5],       // minimum value of row is 1
-            <br />
-            [5, 6, 7, 8, 9],       // minimum value of row is 5
-            <br />
-            [20, 21, 34, 56, 100]  // minimum value of row is 20
-            ]
-            <br />
-            So, the function should return 26 because sum of minimums is as 1 + 5 + 20 = 26
-            <br />
-            Note: You will be always given non-empty array containing Positive values.
+            <div>
+              Given a Divisor and a Bound , Find the largest integer N , Such That:
+            </div>
+
+            <div>
+              Conditions :
+              N is divisible by divisor
+
+              N is less than or equal to bound
+
+              N is greater than 0.
+
+            </div>
+            <div>
+              <h3>Input >> Output Examples  </h3>
+              <code>maxMultiple (2,7) ==> return (6)</code>
+
+              <h3>Explanation</h3>
+              <p>(6) is divisible by (2) , (6) is less than or equal to bound (7) , and (6) is > 0 .</p>
+            </div>
+
+
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
-          Code
+        <Button href="https://www.google.com" target="_blank" size="small" color="primary">
+          Help
         </Button>
+
         <Button size="small" color="primary">
-          Hint
+          <SolutionModal/>
         </Button>
 
       </CardActions>

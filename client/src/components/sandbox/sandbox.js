@@ -1,23 +1,3 @@
-// import React from 'react';
-// import CssBaseline from '@material-ui/core/CssBaseline';
-// import Typography from '@material-ui/core/Typography';
-// import Container from '@material-ui/core/Container';
-
-
-// export default function SimpleContainer() {
-//   return (
-//     <React.Fragment>
-//       <CssBaseline />
-//       <Container maxWidth="sm">
-//         <Typography component="div" style={{ backgroundColor: '#cfe8fc', height: '100vh' }} />
-//       </Container>
-//     </React.Fragment>
-//   );
-// }
-
-
-
-
 
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
@@ -29,6 +9,7 @@ import NewsArea from '../news';
 import CodeChallenge from '../codeChallenge'
 import AceEditor from '../codeEditor';
 import CreatePosting from '../createPosting';
+import MediaCard from '../news'
 
 
 
@@ -82,10 +63,10 @@ export default function AutoGrid() {
             <Avatar alt="Chuck Norris" src="/assets/images/cn.jpg" className={classes.large} />
             <img src="/assets/images/cn.jpg" id="user-photo" alt="user avatar" style={{ width: "70px", borderRadius: "10px" }} />
             <p id="username">Chuck Norris</p>
-            <CreatePosting/>
+            <CreatePosting />
           </Paper>
           <Paper className={classes.newsFeed}>
-            <NewsArea />
+            <MediaCard />
 
           </Paper>
         </Grid>
@@ -93,7 +74,7 @@ export default function AutoGrid() {
           <Paper className={classes.mainFeed}>
             <Chuckticker />
             <div id="posts">
-              
+
             </div>
           </Paper>
         </Grid>

@@ -58,7 +58,7 @@ const App = () => {
         email: user.email,
         password: user.password,
       })
-      .then(( data ) => {
+      .then((data) => {
         axios
           .post("api/users/login", {
             username: userState.username,
@@ -94,7 +94,7 @@ const App = () => {
         <Fragment>
           <Navbar />
           <Switch>
-            <Route exact path="/">
+            <Route exact path="/welcome">
               <Welcome />
             </Route>
             <Route path="/home">

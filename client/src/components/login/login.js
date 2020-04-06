@@ -50,44 +50,9 @@ export default function FormDialog() {
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
         <DialogTitle className={classes.title} id="form-dialog-title" > <img src="/assets/images/coder_book.png" style={{ height: '60px' }} /></DialogTitle>
 
-        {/* <DialogContent> */}
-        {/* <DialogContentText>
-            Please enter username/email address and password to continue.
-          </DialogContentText>
-          <TextField
-            autoFocus
-            name="username"
-            value={username}
-            margin="dense"
-            id="username"
-            label="Username"
-            type="text"
-            fullWidth
-            onChange={handleInputChange}
-          />
-          <TextField
-            autoFocus
-            name="password"
-            value={password}
-            margin="dense"
-            id="password"
-            label="Password"
-            type="password"
-            fullWidth
-            onChange={handleInputChange}
-          /> */}
 
-        {/* <SignIn /> */}
-
-
-        {/* </DialogContent> */}
         <DialogActions>
-          {/* <Button onClick={handleClose} color="secondary">
-            Cancel
-          </Button> */}
-          {/* <Button onClick={handleLogin} color="primary">
-            Sign In
-          </Button> */}
+
         </DialogActions>
         <CustomizedExpansionPanels />
       </Dialog>
