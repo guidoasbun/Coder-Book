@@ -64,10 +64,7 @@ export default function MediaCard() {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
-          Share
-                </Button>
-        <Button href={newsUrl} target="_blank" size="small" color="primary">
+        <Button href={newsUrl} target="_blank" position="center" size="small" color="primary">
           Learn More
                 </Button>
       </CardActions>
