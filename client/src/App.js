@@ -9,7 +9,7 @@ import {
 import axios from "axios";
 import UserContext from "./utils/userContext";
 import Navbar from "./components/navbar";
-import Sandbox from "./components/sandbox";
+import Home from "./components/sandbox";
 import Welcome from "./components/welcome"
 
 
@@ -98,7 +98,7 @@ const App = () => {
               <Welcome />
             </Route>
             <Route path="/home">
-              <Sandbox />
+              <Home />
             </Route>
           </Switch>
         </Fragment>
