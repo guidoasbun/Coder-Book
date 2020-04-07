@@ -11,14 +11,14 @@ import Typography from '@material-ui/core/Typography'
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 300,
+    maxWidth: 400,
   },
   media: {
-    height: 100,
+    height: 200,
   },
 });
 
-export default function MediaCard() {
+export default function MediaCard2() {
   const [data, setData] = useState([])
   const [newsPic, setNewsImage] = useState([])
   const [newsUrl, setNewsUrl] = useState([])
@@ -31,10 +31,10 @@ export default function MediaCard() {
     console.log(getArticle)
     axios.all([getArticle]).then(
       axios.spread((...allData) => {
-        const allDataTitle = allData[0].data.articles[0].title
-        const allDataUrl = allData[0].data.articles[0].url
-        const allDataImage = allData[0].data.articles[0].urlToImage
-        const allDataContent = allData[0].data.articles[0].content
+        const allDataTitle = allData[0].data.articles[2].title
+        const allDataUrl = allData[0].data.articles[2].url
+        const allDataImage = allData[0].data.articles[2].urlToImage
+        const allDataContent = allData[0].data.articles[2].content
 
         setData(allDataTitle)
         setNewsUrl(allDataUrl)
@@ -55,7 +55,7 @@ export default function MediaCard() {
           image={newsPic}
         />
         <CardContent>
-          <Typography gutterBottom variant="h" component="h3">
+          <Typography gutterBottom variant="h5" component="h2">
             {data}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
@@ -64,6 +64,9 @@ export default function MediaCard() {
         </CardContent>
       </CardActionArea>
       <CardActions>
+        <Button size="small" color="primary">
+          Share
+                </Button>
         <Button href={newsUrl} target="_blank" size="small" color="primary">
           Learn More
                 </Button>
