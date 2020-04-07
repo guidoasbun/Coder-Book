@@ -104,7 +104,7 @@ export default function SearchAppBar() {
               inputProps={{ 'aria-label': 'search' }}
             />
           </div> */}
-          <Button href="/welcome"><ExitToAppIcon /></Button>
+          <Button href="/"><ExitToAppIcon /></Button>
         </Toolbar>
       </AppBar>
 

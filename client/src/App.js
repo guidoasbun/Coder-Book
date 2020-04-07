@@ -94,10 +94,12 @@ const App = () => {
         <Fragment>
           <Navbar />
           <Switch>
-            <Route exact path="/welcome" component={Welcome}/>
-              {/* <Welcome /> */}
-            <Route exact path="/home" component={Sandbox}/>
-              {/* <Sandbox /> */}
+            <Route exact path="/">
+              <Welcome />
+            </Route>
+            <Route path="/home">
+              <Sandbox />
+            </Route>
           </Switch>
         </Fragment>
       </Router>
