@@ -91,7 +91,6 @@ const App = () => {
   return (
     <UserContext.Provider value={userState}>
       <Router>
-        
           <Navbar />
           <Switch>
             <Route exact path="/">
@@ -101,7 +100,6 @@ const App = () => {
               <Home />
             </Route>
           </Switch>
-      
       </Router>
     </UserContext.Provider >
   );
