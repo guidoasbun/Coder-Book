@@ -84,7 +84,7 @@ export default function SearchAppBar() {
           </Typography>
           <TemporaryDrawer />
           <Button  color="inherit"><LoginModal /></Button>
-          <div className={classes.search}>
+          {/* <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
             </div>
@@ -96,7 +96,7 @@ export default function SearchAppBar() {
               }}
               inputProps={{ 'aria-label': 'search' }}
             />
-          </div> */}
+          </div>  */}
           <Button href="/"><ExitToAppIcon /></Button>
         </Toolbar>
       </AppBar>

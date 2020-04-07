@@ -9,7 +9,6 @@ import MediaCard from '../news';
 import CodeChallenge from '../codeChallenge'
 import AceEditor from '../codeEditor';
 import CreatePosting from '../createPosting';
-import MediaCard from '../news'
 
 
 
