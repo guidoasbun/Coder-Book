@@ -61,7 +61,7 @@ export default function AutoGrid() {
           <Paper className={classes.userBio}>
             <Avatar alt="Chuck Norris" src="/assets/images/cn.jpg" className={classes.large} />
             <img src="/assets/images/cn.jpg" id="user-photo" alt="user avatar" style={{ width: "70px", borderRadius: "10px" }} />
-            <p id="username">Chuck Norris</p>
+            <p id="username">{localStorage.getItem('username')}</p>
             <CreatePosting />
           </Paper>
           <Paper className={classes.newsFeed}>
