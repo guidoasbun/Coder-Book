@@ -74,7 +74,6 @@ export default function AutoGrid() {
           <Paper className={classes.mainFeed}>
             <Chuckticker />
             <div id="posts">
-
             </div>
           </Paper>
         </Grid>
