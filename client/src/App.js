@@ -9,9 +9,11 @@ import {
 import axios from "axios";
 import UserContext from "./utils/userContext";
 import Navbar from "./components/navbar";
-import Sandbox from "./components/sandbox";
+
+import Home from "./components/sandbox";
 import Welcome from "./components/welcome"
 
+// import Chuckticker from "./components/chuckticker";
 
 const App = () => {
   const [userState, setUserState] = useState({
@@ -80,20 +82,15 @@ const App = () => {
   return (
     <UserContext.Provider value={userState}>
       <Router>
-        <Fragment>
-          <Navbar />
-          <Switch>
-            <Route exact path="/">
-              <Welcome />
-            </Route>
-            <Route exact path="/welcome">
-              <Welcome />
-            </Route>
-            <Route path="/home">
-              <Sandbox />
-            </Route>
-          </Switch>
-        </Fragment>
+        <Navbar />
+        <Switch>
+          <Route exact path="/">
+            <Welcome />
+          </Route>
+          <Route path="/home">
+            <Home />
+          </Route>
+        </Switch>
       </Router>
     </UserContext.Provider >
   );

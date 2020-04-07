@@ -5,11 +5,10 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Chuckticker from '../chuckticker';
 import Avatar from '@material-ui/core/Avatar';
-import NewsArea from '../news';
+import MediaCard from '../news';
 import CodeChallenge from '../codeChallenge'
 import AceEditor from '../codeEditor';
 import CreatePosting from '../createPosting';
-import MediaCard from '../news'
 
 
 
@@ -48,7 +47,9 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.secondary,
     height: '66.8vh',
     backgroundColor: '#3f51b5',
-    marginTop: '8px'
+    marginTop: '8px',
+
+
   }
 }));
 
@@ -65,9 +66,8 @@ export default function AutoGrid() {
             <p id="username">Chuck Norris</p>
             <CreatePosting />
           </Paper>
-          <Paper className={classes.newsFeed}>
+          <Paper className={classes.newsFeed} >
             <MediaCard />
-
           </Paper>
         </Grid>
         <Grid item xs={12} sm={12} md={6} lg={6}>
@@ -81,7 +81,7 @@ export default function AutoGrid() {
           <Paper className={classes.paper}><CodeChallenge /> </Paper>
         </Grid>
       </Grid>
-    </div>
+    </div >
   );
 }
 

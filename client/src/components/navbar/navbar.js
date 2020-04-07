@@ -1,15 +1,16 @@
 import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
 import { fade, makeStyles } from '@material-ui/core/styles';
-import MenuIcon from '@material-ui/icons/Menu';
+
 import SearchIcon from '@material-ui/icons/Search';
 import Button from '@material-ui/core/Button';
 import LoginModal from "../login";
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import TemporaryDrawer from '../drawer/drawer';
+
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -78,18 +79,10 @@ export default function SearchAppBar() {
     <div className={classes.root}>
       <AppBar position="fixed">
         <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="open drawer"
-          >
-            <MenuIcon />
-          </IconButton>
-
           <Typography className={classes.title} variant="h6" noWrap>
             <a href="/home"><img style={{ width: "200px" }} src="/assets/images/coder_book.png" /></a>
           </Typography>
+          <TemporaryDrawer />
           <Button color="inherit"><LoginModal /></Button>
           {/* <div className={classes.search}>
             <div className={classes.searchIcon}>
@@ -103,8 +96,8 @@ export default function SearchAppBar() {
               }}
               inputProps={{ 'aria-label': 'search' }}
             />
-          </div> */}
-          <Button href="/welcome"><ExitToAppIcon /></Button>
+          </div>  */}
+          <Button href="/"><ExitToAppIcon /></Button>
         </Toolbar>
       </AppBar>
 
