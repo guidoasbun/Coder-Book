@@ -70,7 +70,7 @@ export default function TemporaryDrawer() {
         {['Sandbox'].map((text, index) => (
           <ListItem button component={Link}  >
             <ListItemIcon>{index ? <ContactSupportTwoToneIcon /> : <SportsEsportsIcon />}</ListItemIcon>
-            <ListItemText primary="Code Editor" />
+            <ListItemText primary="Sandbox" />
           </ListItem>
         ))}
       </List>
