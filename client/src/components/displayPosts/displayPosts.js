@@ -44,7 +44,7 @@ class App extends Component {
 
               <Typography>
               <div style={{ border: '1px solid #505050 ', marginBottom: '25px', borderRadius: '5px', color: 'white', backgroundColor: '#505050', padding: '5px', boxShadow: '0px 10px 20px black' }}>
-                <p>{post.entryTitle}</p>
+                <h2>{post.entryTitle}</h2>
                 <hr style={{ borderTop: '1px solid #606060', borderBottom: '1px solid #606060'}}/>
                 <p>{post.entry}</p>
                 <br/>
