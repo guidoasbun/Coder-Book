@@ -9,7 +9,8 @@ const { check, validationResult } = require('express-validator');
 // Get all postings from user
 // GET all items from user
 router.get('/postings/all', (req, res) => {
-  Posting.find()
+  Posting.find().sort({
+      dateEntryCreated: -1,})
     .then(items => res.json(items))
     .catch(e => console.error(e));
 });
