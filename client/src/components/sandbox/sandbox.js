@@ -9,6 +9,7 @@ import MediaCard from '../news';
 import CodeChallenge from '../codeChallenge'
 import AceEditor from '../codeEditor';
 import CreatePosting from '../createPosting';
+import PostData from '../displayPosts';
 
 
 
@@ -74,6 +75,11 @@ export default function AutoGrid() {
           <Paper className={classes.mainFeed}>
             <Chuckticker />
             <div id="posts">
+              <br />
+              <br />
+              <br />
+              <br />
+              <PostData />
             </div>
           </Paper>
         </Grid>
