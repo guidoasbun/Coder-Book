@@ -10,6 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import CardActions from '@material-ui/core/CardActions';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import { Container } from '@material-ui/core';
 
 
 
@@ -38,6 +39,9 @@ class App extends Component {
         {
           this.state.posts.map(post => (
             <div>
+
+            
+
               <Typography>
               <div style={{ border: '1px solid #505050 ', marginBottom: '25px', borderRadius: '5px', color: 'white', backgroundColor: '#505050', padding: '5px', boxShadow: '0px 10px 20px black' }}>
                 <p>{post.entryTitle}</p>
@@ -47,7 +51,7 @@ class App extends Component {
                 
               </div>
               </Typography>
-
+      
 
 
 

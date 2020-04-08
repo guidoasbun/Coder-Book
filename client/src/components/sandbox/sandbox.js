@@ -10,6 +10,7 @@ import CodeChallenge from '../codeChallenge'
 import AceEditor from '../codeEditor';
 import CreatePosting from '../createPosting';
 import PostData from '../displayPosts';
+import { Container } from '@material-ui/core';
 
 
 
@@ -23,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     textAlign: 'center',
     color: theme.palette.text.secondary,
-    height: '100vh',
+    height: 'auto',
     backgroundColor: "#3f51b5"
 
   },
@@ -39,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     textAlign: 'center',
     color: theme.palette.text.secondary,
-    height: '100vh',
+    height: 'auto',
     backgroundColor: "#3f51b5"
   },
   newsFeed: {
@@ -62,32 +63,45 @@ export default function AutoGrid() {
       <Grid container spacing={1}>
         <Grid item xs={12} sm={12} md={3} lg={3}>
           <Paper className={classes.userBio}>
-            <Avatar alt="Chuck Norris" src="/assets/images/cn.jpg" className={classes.large} />
-            <img src="/assets/images/cn.jpg" id="user-photo" alt="user avatar" style={{ width: "70px", borderRadius: "10px" }} />
-            <p id="username">{localStorage.getItem('username')}</p>
+            <Avatar
+              alt='Chuck Norris'
+              src='/assets/images/cn.jpg'
+              className={classes.large}
+            />
+            <img
+              src='/assets/images/cn.jpg'
+              id='user-photo'
+              alt='user avatar'
+              style={{ width: '70px', borderRadius: '10px' }}
+            />
+            <p id='username'>{localStorage.getItem('username')}</p>
             <CreatePosting />
           </Paper>
-          <Paper className={classes.newsFeed} >
+          <Paper className={classes.newsFeed}>
             <MediaCard />
           </Paper>
         </Grid>
         <Grid item xs={12} sm={12} md={6} lg={6}>
           <Paper className={classes.mainFeed}>
             <Chuckticker />
-            <div id="posts">
+            <div id='posts'>
               <br />
               <br />
               <br />
               <br />
-              <PostData />
+              <Grid>
+                <PostData />
+              </Grid>
             </div>
           </Paper>
         </Grid>
         <Grid item xs={12} sm={12} md={3} lg={3}>
-          <Paper className={classes.paper}><CodeChallenge /> </Paper>
+          <Paper className={classes.paper}>
+            <CodeChallenge />{' '}
+          </Paper>
         </Grid>
       </Grid>
-    </div >
+    </div>
   );
 }
 
