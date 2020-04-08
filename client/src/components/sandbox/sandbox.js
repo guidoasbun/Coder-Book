@@ -23,7 +23,8 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     textAlign: 'center',
     color: theme.palette.text.secondary,
-    height: '100vh',
+    height: 'auto',
+    width: 'auto',
     backgroundColor: "#3f51b5"
 
   },
@@ -31,7 +32,8 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     textAlign: 'center',
     color: theme.palette.text.secondary,
-    height: '30vh',
+    height: 'auto',
+    width: 'auto',
     backgroundColor: '#3f51b5',
     color: 'white'
   },
@@ -39,14 +41,16 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     textAlign: 'center',
     color: theme.palette.text.secondary,
-    height: '100vh',
+    height: 'auto',
+    width: 'auto',
     backgroundColor: "#3f51b5"
   },
   newsFeed: {
     padding: theme.spacing(2),
     textAlign: 'center',
     color: theme.palette.text.secondary,
-    height: '66.8vh',
+    height: 'auto',
+    width: 'auto',
     backgroundColor: '#3f51b5',
     marginTop: '8px',
 
