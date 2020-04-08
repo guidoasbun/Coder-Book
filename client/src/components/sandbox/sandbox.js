@@ -9,6 +9,7 @@ import MediaCard from '../news';
 import CodeChallenge from '../codeChallenge'
 import AceEditor from '../codeEditor';
 import CreatePosting from '../createPosting';
+import PostData from '../displayPosts';
 
 
 
@@ -47,7 +48,9 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.secondary,
     height: '66.8vh',
     backgroundColor: '#3f51b5',
-    marginTop: '8px'
+    marginTop: '8px',
+
+
   }
 }));
 
@@ -64,7 +67,7 @@ export default function AutoGrid() {
             <p id="username">{localStorage.getItem('username')}</p>
             <CreatePosting />
           </Paper>
-          <Paper className={classes.newsFeed}>
+          <Paper className={classes.newsFeed} >
             <MediaCard />
           </Paper>
         </Grid>
@@ -72,7 +75,11 @@ export default function AutoGrid() {
           <Paper className={classes.mainFeed}>
             <Chuckticker />
             <div id="posts">
-
+              <br />
+              <br />
+              <br />
+              <br />
+              <PostData />
             </div>
           </Paper>
         </Grid>
@@ -80,8 +87,7 @@ export default function AutoGrid() {
           <Paper className={classes.paper}><CodeChallenge /> </Paper>
         </Grid>
       </Grid>
-    </div>
-    
+    </div >
   );
 }
 

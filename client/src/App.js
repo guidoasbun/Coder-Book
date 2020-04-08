@@ -74,34 +74,23 @@ const App = () => {
             window.location = "/home";
             console.log(data);
           });
-        // console.log(data)
-        // localStorage.setItem("name", data.name);
-        // localStorage.setItem("username", data.username);
-        // localStorage.setItem("id", data._id);
-        // localStorage.setItem("jwt", data.token);
-        // window.location = "/home";
+
       });
-    // setUserState({
-    //   ...userState,
-    //   user: "",
-    //   username: "",
-    //   email: "",
-    //   password: "",
-    // });
+
   };
 
   return (
     <UserContext.Provider value={userState}>
       <Router>
-          <Navbar />
-          <Switch>
-            <Route exact path="/">
-              <Welcome />
-            </Route>
-            <Route path="/home">
-              <Home />
-            </Route>
-          </Switch>
+        <Navbar />
+        <Switch>
+          <Route exact path="/">
+            <Welcome />
+          </Route>
+          <Route path="/home">
+            <Home />
+          </Route>
+        </Switch>
       </Router>
     </UserContext.Provider >
   );
@@ -109,13 +98,3 @@ const App = () => {
 
 export default App;
 
-// const [data, setData] = useState([])
-// useEffect(() => {
-//     axios
-//once a user is created in the DB, use a user ID to pull data
-//         .get("/api/postings")
-//         .then(({ data: postings }) => {
-//             console.log(postings);
-//         })
-//         .catch((e) => console.error(e));
-// }, []);

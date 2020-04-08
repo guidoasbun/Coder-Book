@@ -29,38 +29,8 @@ const useStyles = makeStyles({
 });
 
 
-
-
-
-
-
 export default function CodeChallenge() {
   const classes = useStyles();
-
-  // const [data, setData] = useState([])
-  // const [challengeName, setChallengeName] = useState([])
-  // const [challengeDescription, setChallengeDescription] = useState([])
-  // const [challangeUrl, setChallengeUrl] = useState([])
-
-  // const fetchData = () => {
-  //   const challengeAPI = 'https://www.codewars.com/api/v1/code-challenges/is-it-even?access_key=hmdFJBAvrHChPezjGjqJ'
-
-  //   const getChallenge = axios.get(challengeAPI)
-  //   console.log(getChallenge)
-  //   axios.all([getChallenge]).then(
-  //     axios.spread((...allData) => {
-  //       const allDataName = allData[0].data.value
-
-  //       setChallengeName(allDataName)
-  //     })
-  //   )
-
-  // }
-  // useEffect(() => {
-  //   fetchData()
-  // }, [])
-
-
 
   return (
     <Card className={classes.root}>
@@ -110,7 +80,6 @@ export default function CodeChallenge() {
         <Button size="small" color="primary">
           <SolutionModal/>
         </Button>
-
       </CardActions>
       <AceEditor />
     </Card>

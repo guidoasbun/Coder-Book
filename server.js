@@ -48,7 +48,7 @@ require("./models");
 app.use(require("./routes"));
 
 // routes to be used by Heroku
-app.use("/*", (req,res) => {
+app.use("/*", (req, res) => {
   res.sendFile(join(__dirname, 'client', 'build', 'index.html'));
 })
 
