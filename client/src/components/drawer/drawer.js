@@ -13,6 +13,8 @@ import AccountCircleTwoToneIcon from '@material-ui/icons/AccountCircleTwoTone';
 import ContactSupportTwoToneIcon from '@material-ui/icons/ContactSupportTwoTone';
 import MessageTwoToneIcon from '@material-ui/icons/MessageTwoTone';
 import InsertCommentTwoToneIcon from '@material-ui/icons/InsertCommentTwoTone';
+import WhatshotTwoToneIcon from '@material-ui/icons/WhatshotTwoTone';
+import DeveloperModeTwoToneIcon from '@material-ui/icons/DeveloperModeTwoTone';
 
 
 const useStyles = makeStyles({
@@ -48,6 +50,15 @@ export default function TemporaryDrawer() {
         {['Posts', 'Replies'].map((text, index) => (
           <ListItem button key={text}>
             <ListItemIcon>{index ? <InsertCommentTwoToneIcon />: <MessageTwoToneIcon />}</ListItemIcon>
+            <ListItemText primary={text} />
+          </ListItem>
+        ))}
+      </List>
+      <Divider />
+      <List>
+        {['Sandbox', 'Tech Trends'].map((text, index) => (
+          <ListItem button key={text}>
+            <ListItemIcon>{index ? <WhatshotTwoToneIcon /> : <DeveloperModeTwoToneIcon />}</ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>
         ))}
