@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function PostingModal() {
-   
+
   const [postingState, setPostingState] = useState({
     entryTitle: '',
     entry: '',
@@ -33,13 +33,13 @@ export default function PostingModal() {
     event.preventDefault();
     axios
       .post('api/postings/one', {
-    entryTitle: postingState.entryTitle,
-    entry: postingState.entry,
-    owner: localStorage.getItem("id")
-    }) 
-    .then(()=>{
-      setOpen(false)
-    })
+        entryTitle: postingState.entryTitle,
+        entry: postingState.entry,
+        owner: localStorage.getItem("id")
+      })
+      .then(() => {
+        setOpen(false)
+      })
   }
 
   const handleInputChange = ({ target }) => {
@@ -71,9 +71,6 @@ export default function PostingModal() {
         <DialogTitle id="form-dialog-title">Enter Post Information</DialogTitle>
 
         <DialogContent>
-          {/* <DialogContentText>
-            Please enter username/email address and password to continue.
-          </DialogContentText> */}
           <TextField
             autoFocus
             type="text"
@@ -85,8 +82,7 @@ export default function PostingModal() {
             fullWidth
             onChange={handleInputChange}
           />
-          <br/>
-          <br/>
+
           <TextField
             type="text"
             name="entry"
@@ -107,7 +103,6 @@ export default function PostingModal() {
             Create
           </Button>
         </DialogActions>
-        {/* <CustomizedExpansionPanels /> */}
       </Dialog>
     </div >
   );

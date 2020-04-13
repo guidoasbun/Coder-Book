@@ -8,6 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import CardActions from '@material-ui/core/CardActions';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import { Container } from '@material-ui/core';
 
 
 
@@ -24,6 +25,7 @@ class App extends Component {
     axios.get('api/postings/all')
       .then(({ data }) => {
         console.log(data)
+        console.log(posts)
         this.setState({ posts: data })
       })
       .catch(e => console.error(e))
@@ -37,25 +39,32 @@ class App extends Component {
       .catch(e => console.error(e))
 
 
+
+
   }
 
-  // componentDidMount() {
 
-  // }
+
+
+
 
   render() {
     return (
       <>
 
+
         {
           this.state.posts.map(post => (
             <div>
+
+
+
               <Typography>
                 <div style={{ border: '1px solid #505050 ', marginBottom: '25px', borderRadius: '5px', color: 'white', backgroundColor: '#505050', padding: '5px', boxShadow: '0px 10px 20px black' }}>
-                  <p>{post.entryTitle}</p>
+                  <h2>{post.entryTitle}</h2>
                   <hr style={{ borderTop: '1px solid #606060', borderBottom: '1px solid #606060' }} />
                   <p>{post.entry}</p>
-
+                  <p>ID:{post.owner}</p>
                   <br />
 
                 </div>
@@ -66,19 +75,23 @@ class App extends Component {
 
             </div>
           ))
-          //   this.state.users.map(user => (
-          // <div>
-          //   <p>{user.username}</p>
-          // </div>
-          //   ))
+
         }
         {
           this.state.users.map(user => (
             <div>
               <p>{user.username}</p>
+              <p>{user._id}</p>
             </div>
+
           ))
+
+
+
         }
+
+
+
       </>
     )
   }
