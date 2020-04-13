@@ -9,11 +9,9 @@ import {
 import axios from "axios";
 import UserContext from "./utils/userContext";
 import Navbar from "./components/navbar";
-
 import Home from "./components/sandbox";
 import Welcome from "./components/welcome"
 
-// import Chuckticker from "./components/chuckticker";
 
 const App = () => {
   const [userState, setUserState] = useState({

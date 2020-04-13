@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-// import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-//import PostingRoutes from '../../../../routes/postingRoutes';
 import withStyles from '@material-ui/core/styles/withStyles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -18,7 +16,8 @@ import Button from '@material-ui/core/Button';
 class App extends Component {
 
   state = {
-    posts: []
+    posts: [],
+    users: []
   }
 
   componentDidMount() {
@@ -28,8 +27,21 @@ class App extends Component {
         this.setState({ posts: data })
       })
       .catch(e => console.error(e))
+
+
+    axios.get('api/users/all')
+      .then(({ data }) => {
+        console.log(data)
+        this.setState({ users: data })
+      })
+      .catch(e => console.error(e))
+
+
   }
 
+  // componentDidMount() {
+
+  // }
 
   render() {
     return (
@@ -39,18 +51,31 @@ class App extends Component {
           this.state.posts.map(post => (
             <div>
               <Typography>
-              <div style={{ border: '1px solid #505050 ', marginBottom: '25px', borderRadius: '5px', color: 'white', backgroundColor: '#505050', padding: '5px', boxShadow: '0px 10px 20px black' }}>
-                <p>{post.entryTitle}</p>
-                <hr style={{ borderTop: '1px solid #606060', borderBottom: '1px solid #606060'}}/>
-                <p>{post.entry}</p>
-                <br/>
-                
-              </div>
+                <div style={{ border: '1px solid #505050 ', marginBottom: '25px', borderRadius: '5px', color: 'white', backgroundColor: '#505050', padding: '5px', boxShadow: '0px 10px 20px black' }}>
+                  <p>{post.entryTitle}</p>
+                  <hr style={{ borderTop: '1px solid #606060', borderBottom: '1px solid #606060' }} />
+                  <p>{post.entry}</p>
+
+                  <br />
+
+                </div>
               </Typography>
 
 
 
 
+            </div>
+          ))
+          //   this.state.users.map(user => (
+          // <div>
+          //   <p>{user.username}</p>
+          // </div>
+          //   ))
+        }
+        {
+          this.state.users.map(user => (
+            <div>
+              <p>{user.username}</p>
             </div>
           ))
         }

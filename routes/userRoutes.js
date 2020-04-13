@@ -21,6 +21,14 @@ router.post("/users/register", (req, res) => {
     }
   );
 });
+
+router.get("/users/all", (req, res) => {
+  User.find()
+    .then(items => res.json(items))
+    //console.log(items)
+    .catch(e => console.error(e));
+});
+
 //
 // //Route to log in a user with password that returns: user from login
 // //isLoggedIn, postings, user, token
@@ -40,6 +48,8 @@ router.post("/users/login", (req, res) => {
     });
   });
 });
+
+
 //
 module.exports = router;
 
